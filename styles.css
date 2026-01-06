@@ -1,0 +1,700 @@
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: url('https://wallpapers.com/images/hd/arch-linux-1920-x-1080-wallpaper-6ordldys30y1qxv7.jpg') center/cover fixed;
+            color: #e6e6e6;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .desktop {
+        display: none;
+    }
+    
+    .taskbar {
+        display: none;
+    }
+    
+    .mobile-interface {
+        display: block !important;
+    }
+
+    /* Evita que alguna tarjeta se muestre por error dentro del grid de navegación */
+    .mobile-nav .mobile-card {
+        display: none !important;
+    }
+}
+
+        /* Desktop Styles */
+        @media (min-width: 769px) {
+            .mobile-interface {
+                display: none;
+            }
+        }
+
+        .desktop {
+            height: 100vh;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%);
+        }
+
+        .desktop-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 90px);
+            z-index: 10;
+        }
+
+        .desktop-icon {
+            width: 80px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px;
+            border-radius: 8px;
+            position: absolute;
+            user-select: none;
+        }
+
+        .desktop-icon:hover {
+            background: rgba(120, 119, 198, 0.2);
+            transform: scale(1.05);
+        }
+
+        .desktop-icon.dragging {
+            z-index: 1000;
+            transform: scale(1.1);
+            opacity: 0.8;
+            transition: none;
+        }
+
+        .icon-image {
+            font-size: 32px;
+            margin-bottom: 8px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .icon-label {
+            font-size: 12px;
+            text-align: center;
+            color: #e6e6e6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            font-weight: 500;
+        }
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(120, 119, 198, 0.3);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .arch-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .arch-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .taskbar-apps {
+            display: flex;
+            gap: 5px;
+            flex: 1;
+        }
+
+        .taskbar-app {
+            background: rgba(120, 119, 198, 0.2);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            max-width: 150px;
+        }
+
+        .taskbar-app:hover {
+            background: rgba(120, 119, 198, 0.4);
+        }
+
+        .taskbar-app.active {
+            background: rgba(120, 119, 198, 0.5);
+            border-color: #7877c6;
+        }
+
+        .taskbar-app-icon {
+            font-size: 14px;
+        }
+
+        .taskbar-app-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .system-info {
+            font-size: 12px;
+            color: #7877c6;
+        }
+
+        .start-menu {
+            position: fixed;
+            bottom: 60px;
+            left: 20px;
+            width: 280px;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 2000;
+        }
+
+        .start-menu.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .start-menu-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(120, 119, 198, 0.2);
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #7877c6;
+        }
+
+        .start-menu-items {
+            padding: 10px 0;
+        }
+
+        .start-menu-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #e6e6e6;
+        }
+
+        .start-menu-item:hover {
+            background: rgba(120, 119, 198, 0.2);
+        }
+
+        .start-menu-icon {
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .start-menu-separator {
+            height: 1px;
+            background: rgba(120, 119, 198, 0.2);
+            margin: 5px 20px;
+        }
+
+        .window {
+            position: absolute;
+            background: rgba(15, 15, 35, 0.95);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: none;
+            overflow: hidden;
+            animation: windowOpen 0.3s ease;
+        }
+
+        @keyframes windowOpen {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .window.active {
+            display: block;
+        }
+
+        .window-header {
+            height: 40px;
+            background: rgba(120, 119, 198, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            cursor: move;
+            border-bottom: 1px solid rgba(120, 119, 198, 0.2);
+        }
+
+        .window-title {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        .close { background: #ff5f57; }
+        .minimize { background: #ffbd2e; }
+        .maximize { background: #28ca42; }
+
+        .window.minimized {
+            display: none !important;
+        }
+
+        .window-content {
+            padding: 20px;
+            height: calc(100% - 40px);
+            overflow-y: auto;
+        }
+
+        .terminal {
+            background: #000;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 15px;
+            height: 400px;
+            overflow-y: auto;
+            border-radius: 8px;
+        }
+
+        .terminal-line {
+            margin-bottom: 5px;
+        }
+
+        .prompt {
+            color: #7877c6;
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            font-family: inherit;
+            outline: none;
+            width: 100%;
+        }
+
+        .project-card {
+            background: rgba(120, 119, 198, 0.1);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(120, 119, 198, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(120, 119, 198, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(120, 119, 198, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #7877c6, #ff77c6);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .contact-card {
+            background: rgba(120, 119, 198, 0.1);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .contact-card:hover {
+            background: rgba(120, 119, 198, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #7877c6, #ff77c6);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(120, 119, 198, 0.4);
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .chat-container {
+            height: 350px;
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-input-container {
+            padding: 10px;
+            border-top: 1px solid rgba(120, 119, 198, 0.3);
+        }
+
+        .chat-input {
+            width: 100%;
+            background: rgba(120, 119, 198, 0.1);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #e6e6e6;
+            font-family: inherit;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: rgba(120, 119, 198, 0.3);
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background: rgba(255, 119, 198, 0.2);
+        }
+
+        .cv-viewer {
+            width: 100%;
+            height: 500px;
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            background: white;
+        }
+
+        /* Mobile Interface Styles */
+        .mobile-interface {
+            display: none;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.95), rgba(120, 119, 198, 0.1));
+            padding: 0;
+        }
+
+        .mobile-header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(120, 119, 198, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .mobile-header h1 {
+            color: #7877c6;
+            font-size: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .mobile-nav-item {
+            background: rgba(15, 15, 35, 0.8);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-nav-item:hover, .mobile-nav-item:active {
+            background: rgba(120, 119, 198, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(120, 119, 198, 0.2);
+        }
+
+        .mobile-nav-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .mobile-nav-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #e6e6e6;
+        }
+
+        .mobile-content {
+            display: none;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .mobile-content.active {
+            display: block;
+        }
+
+        .mobile-back-btn {
+            background: rgba(120, 119, 198, 0.3);
+            border: 1px solid rgba(120, 119, 198, 0.5);
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: #e6e6e6;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-back-btn:hover {
+            background: rgba(120, 119, 198, 0.5);
+        }
+
+        .mobile-card {
+            background: rgba(15, 15, 35, 0.8);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-terminal {
+            background: #000;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 300px;
+            overflow-y: auto;
+        }
+
+        .mobile-chat {
+            height: 400px;
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .mobile-chat-input {
+            padding: 10px;
+            border-top: 1px solid rgba(120, 119, 198, 0.3);
+        }
+
+        .mobile-input {
+            width: 100%;
+            background: rgba(120, 119, 198, 0.1);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            color: #e6e6e6;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .mobile-btn {
+            background: linear-gradient(135deg, #7877c6, #ff77c6);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .mobile-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(120, 119, 198, 0.4);
+        }
+
+        .mobile-skill-tag {
+            display: inline-block;
+            background: rgba(120, 119, 198, 0.3);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin: 3px;
+        }
+
+        .mobile-contact-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .mobile-contact-item {
+            background: rgba(120, 119, 198, 0.1);
+            border: 1px solid rgba(120, 119, 198, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mobile-contact-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .mobile-testimonial {
+            background: rgba(120, 119, 198, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .mobile-testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #7877c6, #ff77c6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .mobile-cv-section {
+            background: rgba(120, 119, 198, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .mobile-cv-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+
