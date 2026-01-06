@@ -10,8 +10,8 @@
             about: 'Diego - 19 años\nEstudiante de Ingeniería en Sistemas\nDesarrollador Full Stack especializado en Web3 y criptomonedas\nApasionado por la IA y nuevas tecnologías',
             projects: 'Proyectos realizados:\n1. Cafetería Torogoz (León, GTO)\n2. Portafolios SmartFit (x2)\n3. Tienda Tecnológica\n4. Página Estructura de Datos\n\nEn desarrollo:\n- Tokens en Rust\n- Red Social Mexicana 🇲🇽',
             skills: 'Lenguajes:\n- Rust, Java, C#, C\n- HTML, CSS, JavaScript\n\nHerramientas:\n- Visual Studio, Cursor, NetBeans\n- Mantenimiento de Hardware\n\nCertificaciones:\n- Java (Metaphorce)\n- Mantenimiento Preventivo/Correctivo PC',
-            contact: 'Contacto:\n📧 Email: diegomancera.dev@gmail.com\n💬 WhatsApp: 5645049448\n🐙 GitHub: https://github.com/CryptoCapi',
-            github: 'GitHub: https://github.com/CryptoCapi\n¡Visita mi perfil para ver todos mis proyectos!',
+            contact: 'Contacto:\n📧 Email: diegomancera.dev@gmail.com\n💬 WhatsApp: 5645049448\n🐙 GitHub: https://github.com/diegodevxd',
+            github: 'GitHub: https://github.com/diegodevxd\n¡Visita mi perfil para ver todos mis proyectos!',
             clear: 'CLEAR',
             neofetch: `     /\\         diego@diegoportfolio
     /  \\        ----------------
@@ -436,4 +436,5 @@
                 }, 1000);
             }
         });
+
     
