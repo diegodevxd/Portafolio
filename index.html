@@ -1,950 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArchOS Portfolio - Sistema de Portafolio</title>
+    <meta name="description" content="Cyberpunk personal portfolio of a systems engineering student.">
+    <title>Portafolio Diego</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <!-- Mobile Interface -->
-    <div class="mobile-interface" id="mobile-interface">
-        <div class="mobile-header">
-            <h1>🏠 Diego Portfolio</h1>
+    <div class="scanlines"></div>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">SYS.ENG_<span>DIEGO</span></div>
+        <div class="nav-links">
+            <a href="#about" data-i18n="nav_about">Acerca de</a>
+            <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="#contact" data-i18n="nav_contact">Contacto</a>
         </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav" id="mobile-nav">
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-about')">
-                <span class="mobile-nav-icon">📋</span>
-                <div class="mobile-nav-title">Sobre Mí</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-projects')">
-                <span class="mobile-nav-icon">🛠️</span>
-                <div class="mobile-nav-title">Proyectos</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-future')">
-                <span class="mobile-nav-icon">🚀</span>
-                <div class="mobile-nav-title">Futuros</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-terminal')">
-                <span class="mobile-nav-icon">💻</span>
-                <div class="mobile-nav-title">Terminal</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-chat')">
-                <span class="mobile-nav-icon">🤖</span>
-                <div class="mobile-nav-title">IA Support</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-testimonials')">
-                <span class="mobile-nav-icon">⭐</span>
-                <div class="mobile-nav-title">Testimonios</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-cv')">
-                <span class="mobile-nav-icon">📄</span>
-                <div class="mobile-nav-title">Mi CV</div>
-            </div>
-            <div class="mobile-nav-item" onclick="showMobileContent('mobile-contact')">
-                <span class="mobile-nav-icon">📞</span>
-                <div class="mobile-nav-title">Contacto</div>
-            </div>
+        <button id="lang-toggle" class="cyber-button small">EN / ES</button>
+    </nav>
 
-            <!-- Nuevo proyecto: NitedCrypto Web3 -->
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://cryptocapi.github.io/nitedcrypto/og-image.png" alt="NitedCrypto Web3" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">Ξ</div>
-                <h4 style="color: #7877c6;">NitedCrypto Web3</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Plataforma Web3 con conexión de wallets Ethereum, gráfica y noticias en tiempo real, foro y verificaciones on-chain. Contrato: 0xDa571F...D9365C2</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Web3</span>
-                    <span class="mobile-skill-tag">Ethereum</span>
-                    <span class="mobile-skill-tag">Realtime</span>
-                    <span class="mobile-skill-tag">Smart Contract</span>
-                    <span class="mobile-skill-tag">Wallets</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/nitedcrypto', '_blank')" class="mobile-btn">Ver Sitio ?</button>
-            </div>
-
-            <!-- Nuevo proyecto: NitedCrypto Web3 -->
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://cryptocapi.github.io/nitedcrypto/og-image.png" alt="NitedCrypto Web3" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">Ξ</div>
-                <h4 style="color: #7877c6;">NitedCrypto Web3</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Plataforma Web3 con conexión de wallets Ethereum, gráfica y noticias en tiempo real, foro y verificaciones on-chain. Contrato: 0xDa571F...D9365C2</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Web3</span>
-                    <span class="mobile-skill-tag">Ethereum</span>
-                    <span class="mobile-skill-tag">Realtime</span>
-                    <span class="mobile-skill-tag">Smart Contract</span>
-                    <span class="mobile-skill-tag">Wallets</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/nitedcrypto', '_blank')" class="mobile-btn">Ver Sitio �Ys?</button>
-            </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="HOLA, MUNDO //">HOLA, MUNDO //</h1>
+            <h2 class="subtitle" data-i18n="hero_role">Desarrollador & Estudiante de Ing. en Sistemas (5/12 Semestres)
+            </h2>
+            <p class="description" data-i18n="hero_desc">Construyendo el futuro digital. Experiencia en freelance,
+                desarrollo web y creación de experiencias interactivas.</p>
+            <a href="#projects" class="cyber-button primary" data-i18n="hero_cta">INICIAR SECUENCIA_</a>
         </div>
+    </header>
 
-        <!-- Mobile About Content -->
-        <div class="mobile-content" id="mobile-about">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <div class="mobile-card">
-                <h2 style="color: #7877c6; margin-bottom: 15px; text-align: center;">👋 ¡Hola! Soy Diego</h2>
-                <p style="margin-bottom: 15px;">Tengo 19 años y estoy estudiando Ingeniería en Sistemas. Soy un apasionado desarrollador con experiencia en múltiples tecnologías y un gran interés en la Web3, criptomonedas e inteligencia artificial.</p>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">💻 Lenguajes:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="mobile-skill-tag">🦀 Rust</span>
-                    <span class="mobile-skill-tag">☕ Java</span>
-                    <span class="mobile-skill-tag">🔷 C#</span>
-                    <span class="mobile-skill-tag">⚡ C</span>
-                    <span class="mobile-skill-tag">🌐 HTML/CSS/JS</span>
+    <section id="about" class="section container">
+        <h2 class="section-title glitch" data-text=">PERFIL_">>PERFIL_</h2>
+        <div class="about-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="btn close"></span>
+                    <span class="btn min"></span>
+                    <span class="btn max"></span>
+                    <span class="title">user@sys_eng:~</span>
                 </div>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">🛠️ Herramientas:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="mobile-skill-tag">🎯 Visual Studio</span>
-                    <span class="mobile-skill-tag">⚡ Cursor</span>
-                    <span class="mobile-skill-tag">☕ NetBeans</span>
-                    <span class="mobile-skill-tag">🔧 Hardware</span>
-                </div>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">🏆 Certificaciones:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="mobile-skill-tag">☕ Java - Metaphorce</span>
-                    <span class="mobile-skill-tag">🔧 Mantenimiento PC</span>
+                <div class="terminal-body">
+                    <p><span class="prompt">user@sys_eng:~$</span> whoami</p>
+                    <p class="output" data-i18n="about_text1">Soy estudiante de 5to semestre (de 12) de Ingeniería en
+                        Sistemas. Apasionado por la tecnología, la estética cyberpunk y la creación de arquitecturas
+                        limpias y eficientes.</p>
+                    <p><span class="prompt">user@sys_eng:~$</span> get_skills --tech</p>
+                    <p class="output highlight">HTML5, CSS3, JavaScript, UI/UX, Git, Programación Orientada a Objetos
+                    </p>
+                    <p><span class="prompt">user@sys_eng:~$</span> get_experience --list</p>
+                    <p class="output" data-i18n="about_text2">Trabajo freelance apoyando a pequeños negocios locales a
+                        digitalizarse. Creo portafolios únicos, páginas para empresas y he participado en el desarrollo
+                        algorítmico de videojuegos estilo novela visual.</p>
+                    <p><span class="prompt">user@sys_eng:~$</span> <span class="cursor"></span></p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Mobile Projects Content -->
-        <div class="mobile-content" id="mobile-projects">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">🎯 Galería de Proyectos</h2>
-            
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://drive.google.com/uc?export=view&id=1nTBU2DALt7i3wPMmCXxZ99Ijb8Mz2-hL" alt="Cafetería Torogoz" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">☕</div>
-                <h4 style="color: #7877c6;">Cafetería Torogoz</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Página promocional para cafetería en León, GTO. Diseño moderno y responsive.</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">HTML</span>
-                    <span class="mobile-skill-tag">CSS</span>
-                    <span class="mobile-skill-tag">JavaScript</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/torogoz-restaurant', '_blank')" class="mobile-btn">Ver Sitio 🚀</button>
-            </div>
-            
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://drive.google.com/uc?export=view&id=1Xks7R1uIWtvOWJD0hqZB8NAeT_sCOXsV" alt="Luis Macías SmartFit" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">💪</div>
-                <h4 style="color: #7877c6;">SmartFit Luis Macías</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Portafolio para entrenador personal con sistema de contacto.</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Fitness</span>
-                    <span class="mobile-skill-tag">Portfolio</span>
-                    <span class="mobile-skill-tag">Professional</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/luismacias', '_blank')" class="mobile-btn">Ver Sitio 🚀</button>
-            </div>
-            
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://drive.google.com/uc?export=view&id=124E1zZfOMA9B22sjP8fo4_alRK3ka3cz" alt="Portafolio Demian" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">🎨</div>
-                <h4 style="color: #7877c6;">Portafolio Demian</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Portafolio profesional para artista visual con galería interactiva.</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Portfolio</span>
-                    <span class="mobile-skill-tag">Responsive</span>
-                    <span class="mobile-skill-tag">UI/UX</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/portafoliodemian', '_blank')" class="mobile-btn">Ver Sitio 🚀</button>
-            </div>
-            
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://drive.google.com/uc?export=view&id=1VQpFB4RmGp32iCpvCscw6NZwDMsCmvuH" alt="Entrenamiento Alejandra" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">🏋️</div>
-                <h4 style="color: #7877c6;">Entrenamiento Alejandra</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Página de entrenamiento personalizado con sistema de contacto directo.</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Fitness</span>
-                    <span class="mobile-skill-tag">Personal</span>
-                    <span class="mobile-skill-tag">Training</span>
-                </div>
-                <button onclick="window.open('https://cryptocapi.github.io/Entrenamiento-Personalizado-Alejandra', '_blank')" class="mobile-btn">Ver Sitio 🚀</button>
-            </div>
-            
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://drive.google.com/uc?export=view&id=1GVG1hNRZyPObacyZ9NswJzousiZ3ktaJ" alt="Estructura de Datos" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">📊</div>
-                <h4 style="color: #7877c6;">Página Estructura de Datos</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Proyecto académico sobre estructuras de datos con ejemplos interactivos.</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Academic</span>
-                    <span class="mobile-skill-tag">Educational</span>
-                    <span class="mobile-skill-tag">Interactive</span>
+    <section id="projects" class="section container">
+        <h2 class="section-title glitch" data-text=">BASE_DE_DATOS_PROYECTOS_">>BASE_DE_DATOS_PROYECTOS_</h2>
+        <div class="projects-grid">
+
+            <div class="cyber-card">
+                <div class="card-lines"></div>
+                <div class="card-content">
+                    <div class="card-tag">FREELANCE</div>
+                    <h3>Mevek Electronics</h3>
+                    <p data-i18n="proj_mevek_desc">Sitio web comercial para tienda de electrónica local. Diseño
+                        adaptable y moderno para exhibición de productos tecnológicos.</p>
+                    <div class="card-actions">
+                        <a href="https://diegodevxd.github.io/tecprueba/" target="_blank" class="cyber-link">[
+                            ACCEDER_ENLACE ]</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Nuevo proyecto: NitedCrypto Web3 -->
-            <div class="mobile-card" style="text-align: center;">
-                <img src="https://cryptocapi.github.io/nitedcrypto/og-image.png" alt="NitedCrypto Web3" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display: none; font-size: 48px; margin-bottom: 15px; color: #7877c6;">Ξ</div>
-                <h4 style="color: #7877c6;">NitedCrypto Web3</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Plataforma Web3 con conexión de wallets Ethereum, gráfica y noticias en tiempo real, foro y verificaciones on-chain. Contrato: 0xDa571F...D9365C2</p>
-                <div style="margin: 10px 0;">
-                    <span class="mobile-skill-tag">Web3</span>
-                    <span class="mobile-skill-tag">Ethereum</span>
-                    <span class="mobile-skill-tag">Realtime</span>
-                    <span class="mobile-skill-tag">Smart Contract</span>
-                    <span class="mobile-skill-tag">Wallets</span>
+            <div class="cyber-card">
+                <div class="card-lines"></div>
+                <div class="card-content">
+                    <div class="card-tag">PORTFOLIO</div>
+                    <h3 data-i18n="proj_art_title">Portafolio Artístico</h3>
+                    <p data-i18n="proj_art_desc">Portafolio estilo SO creado para un artista, simulando una interfaz de
+                        sistema operativo interactiva para visualizar sus obras.</p>
+                    <div class="card-actions">
+                        <a href="https://diegodevxd.github.io/demiportafolio/" target="_blank" class="cyber-link">[
+                            ACCEDER_ENLACE ]</a>
+                    </div>
                 </div>
-                <button onclick="window.open('https://cryptocapi.github.io/nitedcrypto', '_blank')" class="mobile-btn">Ver Sitio ?</button>
             </div>
-        </div>
 
-        <!-- Mobile Future Projects Content -->
-        <div class="mobile-content" id="mobile-future">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #ff77c6; margin-bottom: 20px; text-align: center;">🚀 Proyectos Futuros</h2>
-            
-            <div class="mobile-card">
-                <h4 style="color: #7877c6;">🦀 Tokens en Rust</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Desarrollo de tokens de criptomonedas usando Rust para diferentes redes blockchain.</p>
-                <div class="loading-bar">
-                    <div class="loading-progress" style="width: 25%;"></div>
+            <div class="cyber-card">
+                <div class="card-lines"></div>
+                <div class="card-content">
+                    <div class="card-tag">AGENCY</div>
+                    <h3>Cherry Web</h3>
+                    <p data-i18n="proj_cherry_desc">Sitio en desarrollo para una agencia constructora de páginas web en
+                        crecimiento, enfocada en la conversión y la estética limpia.</p>
+                    <div class="card-actions">
+                        <a href="https://diegodevxd.github.io/cherrywebprueba/" target="_blank" class="cyber-link">[
+                            ACCEDER_ENLACE ]</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="mobile-card">
-                <h4 style="color: #7877c6;">🇲🇽 Red Social Mexicana</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Proyecto sorpresa: Una red social enfocada en la comunidad mexicana. ¡Mantente atento!</p>
-                <div class="loading-bar">
-                    <div class="loading-progress" style="width: 40%;"></div>
-                </div>
-            </div>
-            
-            <div class="mobile-card">
-                <h4 style="color: #7877c6;">🌐 Expansión Web3</h4>
-                <p style="font-size: 14px; margin: 8px 0;">Profundizando en tecnologías Web3 y desarrollo de aplicaciones descentralizadas.</p>
-                <div class="loading-bar">
-                    <div class="loading-progress" style="width: 20%;"></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Mobile Terminal Content -->
-        <div class="mobile-content" id="mobile-terminal">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <div class="mobile-terminal" id="mobile-terminal-content">
-                <div class="terminal-line">DiegoOS Portfolio Terminal v1.0</div>
-                <div class="terminal-line">Escribe 'help' para ver comandos disponibles</div>
-                <div class="terminal-line"></div>
-                <div class="terminal-line">
-                    <span class="prompt">[diego@portfolio ~]$ </span>
-                    <input type="text" class="mobile-input" id="mobile-terminal-input" placeholder="Escribe un comando..." style="background: transparent; border: none; color: #00ff00; width: 100%; margin-top: 5px;">
+            <div class="cyber-card">
+                <div class="card-lines"></div>
+                <div class="card-content">
+                    <div class="card-tag">GAMEDEV</div>
+                    <h3 data-i18n="proj_game_title">Juego Novela Visual</h3>
+                    <p data-i18n="proj_game_desc">Proyecto colaborativo para una clase de arte. Encargado de toda la
+                        programación y lógica. Arte diseñado por Demian.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/diegodevxd/novelagame" target="_blank" class="cyber-link">[
+                            REPO_GITHUB ]</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Mobile Chat Content -->
-        <div class="mobile-content" id="mobile-chat">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">🤖 Asistente IA</h2>
-            <div class="mobile-chat">
-                <div class="mobile-chat-messages" id="mobile-chat-messages">
-                    <div class="message bot-message">
-                        ¡Hola! Soy el asistente IA del portafolio. ¿En qué puedo ayudarte hoy? Puedo responder sobre proyectos, tecnologías o servicios.
-                    </div>
-                </div>
-                <div class="mobile-chat-input">
-                    <input type="text" class="mobile-input" id="mobile-chat-input" placeholder="Escribe tu pregunta...">
-                </div>
-            </div>
         </div>
+    </section>
 
-        <!-- Mobile Testimonials Content -->
-        <div class="mobile-content" id="mobile-testimonials">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">💬 Testimonios</h2>
-            
-            <div class="mobile-testimonial">
-                <div class="mobile-testimonial-header">
-                    <div class="mobile-testimonial-avatar">💪</div>
-                    <div>
-                        <h4 style="color: #7877c6; margin: 0;">Alejandra</h4>
-                        <p style="color: #ff77c6; margin: 0; font-size: 14px;">Entrenadora Personal</p>
-                    </div>
-                </div>
-                <p style="font-style: italic; margin-bottom: 10px;">"Diego creó mi página web profesional de entrenamiento personalizado. El diseño es moderno y funcional, exactamente lo que necesitaba para mostrar mis servicios. ¡Muy recomendado!"</p>
-                <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-            </div>
-            
-            <div class="mobile-testimonial">
-                <div class="mobile-testimonial-header">
-                    <div class="mobile-testimonial-avatar">🏋️</div>
-                    <div>
-                        <h4 style="color: #ff77c6; margin: 0;">Luis Macías</h4>
-                        <p style="color: #7877c6; margin: 0; font-size: 14px;">Entrenador SmartFit</p>
-                    </div>
-                </div>
-                <p style="font-style: italic; margin-bottom: 10px;">"Excelente trabajo en mi portafolio profesional. Diego entendió perfectamente lo que necesitaba para destacar como entrenador. La página es responsive y se ve increíble en todos los dispositivos."</p>
-                <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-            </div>
-            
-            <div class="mobile-testimonial">
-                <div class="mobile-testimonial-header">
-                    <div class="mobile-testimonial-avatar">🎨</div>
-                    <div>
-                        <h4 style="color: #7877c6; margin: 0;">Demian Tenorio</h4>
-                        <p style="color: #00ff00; margin: 0; font-size: 14px;">Artista Visual</p>
-                    </div>
-                </div>
-                <p style="font-style: italic; margin-bottom: 10px;">"Mi portafolio artístico quedó espectacular. Diego supo capturar mi estilo y crear una experiencia visual única. La navegación es intuitiva y el diseño refleja perfectamente mi trabajo."</p>
-                <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-            </div>
-            
-            <div class="mobile-testimonial">
-                <div class="mobile-testimonial-header">
-                    <div class="mobile-testimonial-avatar">☕</div>
-                    <div>
-                        <h4 style="color: #ff77c6; margin: 0;">Lilian Martínez</h4>
-                        <p style="color: #ffbd2e; margin: 0; font-size: 14px;">Propietaria Cafetería Torogoz</p>
-                    </div>
-                </div>
-                <p style="font-style: italic; margin-bottom: 10px;">"La página de mi cafetería superó todas mis expectativas. Diego creó un sitio que refleja la calidez de nuestro lugar y ha ayudado a atraer más clientes. ¡Profesional y creativo!"</p>
-                <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-            </div>
+    <footer id="contact" class="footer container">
+        <h2 class="glitch" data-text=">ESTABLECER_CONEXIÓN_">>ESTABLECER_CONEXIÓN_</h2>
+        <div class="social-links">
+            <a href="https://github.com/diegodevxd" target="_blank" class="cyber-button">GITHUB_</a>
+            <a href="https://www.tiktok.com/@capihw" target="_blank" class="cyber-button">TIKTOK_</a>
+            <a href="mailto:diegomancera.dev@gmail.com" class="cyber-button">EMAIL_</a>
         </div>
+        <p class="copyright">© 2026 SYS.ENG_DIEGO // TERMINAL OFFLINE</p>
+    </footer>
 
-        <!-- Mobile CV Content -->
-        <div class="mobile-content" id="mobile-cv">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">📄 Mi CV</h2>
-            
-            <div class="mobile-cv-buttons">
-                <button onclick="window.open('https://drive.google.com/file/d/1cjBbOg0yjTtfRVD_0PPl_J7fD1leQ-W9/view?usp=sharing', '_blank')" class="mobile-btn">
-                    📖 Ver PDF
-                </button>
-                <button onclick="window.open('https://drive.google.com/uc?export=download&id=1cjBbOg0yjTtfRVD_0PPl_J7fD1leQ-W9', '_blank')" class="mobile-btn">
-                    💾 Descargar
-                </button>
-            </div>
-            
-            <div class="mobile-cv-section">
-                <h3 style="color: #7877c6; margin-bottom: 15px;">👤 Información Personal</h3>
-                <p><strong>Nombre:</strong> Diego Mancera</p>
-                <p><strong>Edad:</strong> 19 años</p>
-                <p><strong>Email:</strong> diegomancera.dev@gmail.com</p>
-                <p><strong>Teléfono:</strong> 5645049448</p>
-                <p><strong>Ubicación:</strong> León, Guanajuato, México</p>
-            </div>
-            
-            <div class="mobile-cv-section">
-                <h3 style="color: #ff77c6; margin-bottom: 15px;">🎓 Educación</h3>
-                <p><strong>Ingeniería en Sistemas Computacionales</strong><br>
-                Universidad Tecnológica de León (En curso)<br>
-                <em>2023 - Presente</em></p>
-            </div>
-            
-            <div class="mobile-cv-section">
-                <h3 style="color: #7877c6; margin-bottom: 15px;">💼 Experiencia</h3>
-                <p><strong>Desarrollador Web Freelance</strong><br>
-                <em>2023 - Presente</em><br>
-                • Desarrollo de páginas web para pequeños negocios<br>
-                • Creación de portafolios profesionales</p>
-            </div>
-            
-            <div class="mobile-cv-section">
-                <h3 style="color: #ff77c6; margin-bottom: 15px;">🏆 Certificaciones</h3>
-                <p>• <strong>Java Programming</strong> - Metaphorce (2023)</p>
-                <p>• <strong>Mantenimiento PC</strong> - CECATI (2022)</p>
-            </div>
-        </div>
+    <script src="script.js"></script>
+</body>
 
-        <!-- Mobile Contact Content -->
-        <div class="mobile-content" id="mobile-contact">
-            <div class="mobile-back-btn" onclick="showMobileNav()">
-                ← Volver al menú
-            </div>
-            <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">¡Conectemos! 🚀</h2>
-            
-            <div class="mobile-contact-grid">
-                <div class="mobile-contact-item">
-                    <div class="mobile-contact-icon">📧</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">Email</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-size: 14px;">diegomancera.dev@gmail.com</p>
-                    <button onclick="window.open('mailto:diegomancera.dev@gmail.com')" class="mobile-btn">Enviar Email</button>
-                </div>
-                
-                <div class="mobile-contact-item">
-                    <div class="mobile-contact-icon">💬</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">WhatsApp</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-size: 14px;">5645049448</p>
-                    <button onclick="window.open('https://wa.me/525645049448', '_blank')" class="mobile-btn">Enviar Mensaje</button>
-                </div>
-                
-                <div class="mobile-contact-item">
-                    <div class="mobile-contact-icon">🐙</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">GitHub</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-size: 14px;">CryptoCapi</p>
-                    <button onclick="window.open('https://github.com/diegodevxd', '_blank')" class="mobile-btn">Ver Perfil</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="desktop" id="desktop">
-        <!-- Iconos del Escritorio -->
-        <div class="desktop-icons" id="desktop-icons">
-            <div class="desktop-icon" ondblclick="openWindow('about-window')" style="top: 0px; left: 0px;">
-                <div class="icon-image">📋</div>
-                <div class="icon-label">Sobre Mí</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('projects-window')" style="top: 0px; left: 100px;">
-                <div class="icon-image">🛠️</div>
-                <div class="icon-label">Proyectos</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('future-window')" style="top: 0px; left: 200px;">
-                <div class="icon-image">🚀</div>
-                <div class="icon-label">Futuros</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('terminal-window')" style="top: 0px; left: 300px;">
-                <div class="icon-image">💻</div>
-                <div class="icon-label">Terminal</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('chat-window')" style="top: 110px; left: 0px;">
-                <div class="icon-image">🤖</div>
-                <div class="icon-label">IA Support</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('testimonials-window')" style="top: 110px; left: 100px;">
-                <div class="icon-image">⭐</div>
-                <div class="icon-label">Testimonios</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('cv-window')" style="top: 110px; left: 200px;">
-                <div class="icon-image">📄</div>
-                <div class="icon-label">Mi CV</div>
-            </div>
-            <div class="desktop-icon" ondblclick="openWindow('contact-window')" style="top: 110px; left: 300px;">
-                <div class="icon-image">📞</div>
-                <div class="icon-label">Contacto</div>
-            </div>
-        </div>
-
-        <!-- Menú de Inicio -->
-        <div class="start-menu" id="start-menu">
-            <div class="start-menu-header">
-                <span>Diego Portfolio</span>
-            </div>
-            <div class="start-menu-items">
-                <div class="start-menu-item" onclick="openWindow('about-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">📋</span>
-                    <span>Sobre Mí</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('projects-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">🛠️</span>
-                    <span>Proyectos</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('future-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">🚀</span>
-                    <span>Proyectos Futuros</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('terminal-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">💻</span>
-                    <span>Terminal</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('chat-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">🤖</span>
-                    <span>IA Support</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('testimonials-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">⭐</span>
-                    <span>Testimonios</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('cv-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">📄</span>
-                    <span>Mi CV</span>
-                </div>
-                <div class="start-menu-item" onclick="openWindow('contact-window'); toggleStartMenu()">
-                    <span class="start-menu-icon">📞</span>
-                    <span>Contacto</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Sobre Mí -->
-        <div class="window" id="about-window" style="width: 500px; height: 600px; top: 50px; left: 50px;">
-            <div class="window-header">
-                <span class="window-title">📋 Sobre Mí - about.sh</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('about-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('about-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('about-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <div class="floating">
-                    <h2 style="color: #7877c6; margin-bottom: 15px;">👋 ¡Hola! Soy Diego</h2>
-                </div>
-                <p style="margin-bottom: 15px;">Tengo 19 años y estoy estudiando Ingeniería en Sistemas. Soy un apasionado desarrollador con experiencia en múltiples tecnologías y un gran interés en la Web3, criptomonedas e inteligencia artificial.</p>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">💻 Lenguajes de Programación:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="skill-tag">🦀 Rust</span>
-                    <span class="skill-tag">☕ Java</span>
-                    <span class="skill-tag">🔷 C#</span>
-                    <span class="skill-tag">⚡ C</span>
-                    <span class="skill-tag">🌐 HTML/CSS/JS</span>
-                </div>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">🛠️ Herramientas & IDEs:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="skill-tag">🎯 Visual Studio</span>
-                    <span class="skill-tag">⚡ Cursor</span>
-                    <span class="skill-tag">☕ NetBeans</span>
-                    <span class="skill-tag">🔧 Hardware Maintenance</span>
-                </div>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">🎯 Pasiones:</h3>
-                <p style="margin-bottom: 15px;">Me fascina investigar nuevas tecnologías, especialmente la inteligencia artificial y el desarrollo de tokens en blockchain. Siempre estoy explorando las últimas innovaciones tecnológicas.</p>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">🏆 Certificaciones:</h3>
-                <div style="margin-bottom: 15px;">
-                    <span class="skill-tag">☕ Java - Metaphorce</span>
-                    <span class="skill-tag">🔧 Mantenimiento PC</span>
-                </div>
-                
-                <h3 style="color: #ff77c6; margin: 20px 0 10px;">📚 Estado Académico:</h3>
-                <div class="loading-bar">
-                    <div class="loading-progress" style="width: 35%;"></div>
-                </div>
-                <p style="font-size: 12px; color: #7877c6;">Ingeniería en Sistemas - En Progreso</p>
-                
-                <p style="margin-top: 15px; font-style: italic; color: #7877c6;">"La tecnología es mejor cuando acerca a las personas." - Matt Mullenweg</p>
-            </div>
-        </div>
-
-        <!-- Ventana Proyectos -->
-        <div class="window" id="projects-window" style="width: 700px; height: 600px; top: 80px; left: 200px;">
-            <div class="window-header">
-                <span class="window-title">🛠️ Proyectos - projects.gallery</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('projects-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('projects-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('projects-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <h2 style="color: #7877c6; margin-bottom: 20px; text-align: center;">🎯 Galería de Proyectos</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
-                    <div class="project-card" style="text-align: center;">
-                        <img src="https://drive.google.com/uc?export=view&id=1nTBU2DALt7i3wPMmCXxZ99Ijb8Mz2-hL" alt="Cafetería Torogoz" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">☕</div>
-                        <h4 style="color: #7877c6; margin-bottom: 8px;">Cafetería Torogoz</h4>
-                        <p style="font-size: 12px; margin: 8px 0;">Página promocional para cafetería en León, GTO. Diseño moderno y responsive.</p>
-                        <div style="margin: 8px 0;">
-                            <span class="skill-tag" style="font-size: 10px;">HTML</span>
-                            <span class="skill-tag" style="font-size: 10px;">CSS</span>
-                            <span class="skill-tag" style="font-size: 10px;">JavaScript</span>
-                        </div>
-                        <button onclick="window.open('https://cryptocapi.github.io/torogoz-restaurant', '_blank')" class="contact-btn" style="padding: 6px 12px; font-size: 12px;">Ver Sitio 🚀</button>
-                    </div>
-                    
-                    <div class="project-card" style="text-align: center;">
-                        <img src="https://drive.google.com/uc?export=view&id=1Xks7R1uIWtvOWJD0hqZB8NAeT_sCOXsV" alt="Luis Macías SmartFit" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">💪</div>
-                        <h4 style="color: #7877c6; margin-bottom: 8px;">SmartFit Luis Macías</h4>
-                        <p style="font-size: 12px; margin: 8px 0;">Portafolio para entrenador personal con sistema de contacto.</p>
-                        <div style="margin: 8px 0;">
-                            <span class="skill-tag" style="font-size: 10px;">Fitness</span>
-                            <span class="skill-tag" style="font-size: 10px;">Portfolio</span>
-                            <span class="skill-tag" style="font-size: 10px;">Professional</span>
-                        </div>
-                        <button onclick="window.open('https://cryptocapi.github.io/luismacias', '_blank')" class="contact-btn" style="padding: 6px 12px; font-size: 12px;">Ver Sitio 🚀</button>
-                    </div>
-                    
-                    <!-- Nuevo proyecto: NitedCrypto Web3 -->
-                    <div class="project-card" style="text-align: center;">
-                        <img src="https://cryptocapi.github.io/nitedcrypto/og-image.png" alt="NitedCrypto Web3" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">Ξ</div>
-                        <h4 style="color: #7877c6; margin-bottom: 8px;">NitedCrypto Web3</h4>
-                        <p style="font-size: 12px; margin: 8px 0;">Plataforma Web3: conexión de wallets Ethereum, gráfico y noticias en tiempo real, foro y verificaciones on-chain. Contrato: 0xDa571F...D9365C2</p>
-                        <div style="margin: 8px 0;">
-                            <span class="skill-tag" style="font-size: 10px;">Web3</span>
-                            <span class="skill-tag" style="font-size: 10px;">Ethereum</span>
-                            <span class="skill-tag" style="font-size: 10px;">Realtime</span>
-                            <span class="skill-tag" style="font-size: 10px;">Smart Contract</span>
-                        </div>
-                        <button onclick="window.open('https://cryptocapi.github.io/nitedcrypto', '_blank')" class="contact-btn" style="padding: 6px 12px; font-size: 12px;">Ver Sitio?</button>
-                    </div>
-                    
-                    <div class="project-card" style="text-align: center;">
-                        <img src="https://drive.google.com/uc?export=view&id=124E1zZfOMA9B22sjP8fo4_alRK3ka3cz" alt="Portafolio Demian" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">🎨</div>
-                        <h4 style="color: #7877c6; margin-bottom: 8px;">Portafolio Demian</h4>
-                        <p style="font-size: 12px; margin: 8px 0;">Portafolio profesional para artista visual con galería interactiva.</p>
-                        <div style="margin: 8px 0;">
-                            <span class="skill-tag" style="font-size: 10px;">Portfolio</span>
-                            <span class="skill-tag" style="font-size: 10px;">Responsive</span>
-                            <span class="skill-tag" style="font-size: 10px;">UI/UX</span>
-                        </div>
-                        <button onclick="window.open('https://cryptocapi.github.io/portafoliodemian', '_blank')" class="contact-btn" style="padding: 6px 12px; font-size: 12px;">Ver Sitio 🚀</button>
-                    </div>
-                    
-                    <div class="project-card" style="text-align: center;">
-                        <img src="https://drive.google.com/uc?export=view&id=1VQpFB4RmGp32iCpvCscw6NZwDMsCmvuH" alt="Entrenamiento Alejandra" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">🏋️</div>
-                        <h4 style="color: #7877c6; margin-bottom: 8px;">Entrenamiento Alejandra</h4>
-                        <p style="font-size: 12px; margin: 8px 0;">Página de entrenamiento personalizado con sistema de contacto directo.</p>
-                        <div style="margin: 8px 0;">
-                            <span class="skill-tag" style="font-size: 10px;">Fitness</span>
-                            <span class="skill-tag" style="font-size: 10px;">Personal</span>
-                            <span class="skill-tag" style="font-size: 10px;">Training</span>
-                        </div>
-                        <button onclick="window.open('https://cryptocapi.github.io/Entrenamiento-Personalizado-Alejandra', '_blank')" class="contact-btn" style="padding: 6px 12px; font-size: 12px;">Ver Sitio 🚀</button>
-                    </div>
-                </div>
-                
-                <div class="project-card" style="text-align: center;">
-                    <img src="https://drive.google.com/uc?export=view&id=1GVG1hNRZyPObacyZ9NswJzousiZ3ktaJ" alt="Estructura de Datos" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; font-size: 48px; margin-bottom: 10px; color: #7877c6;">📊</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">Página Estructura de Datos</h4>
-                    <p style="font-size: 12px; margin: 8px 0;">Proyecto académico sobre estructuras de datos con ejemplos interactivos.</p>
-                    <div style="margin: 8px 0;">
-                        <span class="skill-tag" style="font-size: 10px;">Academic</span>
-                        <span class="skill-tag" style="font-size: 10px;">Educational</span>
-                        <span class="skill-tag" style="font-size: 10px;">Interactive</span>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(120, 119, 198, 0.1); padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center;">
-                    <h4 style="color: #ff77c6; margin-bottom: 10px;">🚀 ¿Tienes un proyecto en mente?</h4>
-                    <p style="font-size: 14px;">¡Haz clic en "Contacto" para discutir tu próximo proyecto!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Proyectos Futuros -->
-        <div class="window" id="future-window" style="width: 550px; height: 450px; top: 120px; left: 300px;">
-            <div class="window-header">
-                <span class="window-title">🚀 Proyectos Futuros - roadmap.md</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('future-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('future-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('future-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <h3 style="color: #ff77c6; margin-bottom: 15px;">🚀 Proyectos en Desarrollo</h3>
-                
-                <div class="project-card">
-                    <h4 style="color: #7877c6;">🦀 Tokens en Rust</h4>
-                    <p style="font-size: 14px; margin: 8px 0;">Desarrollo de tokens de criptomonedas usando Rust para diferentes redes blockchain.</p>
-                    <div class="loading-bar">
-                        <div class="loading-progress" style="width: 25%;"></div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h4 style="color: #7877c6;">🇲🇽 Red Social Mexicana</h4>
-                    <p style="font-size: 14px; margin: 8px 0;">Proyecto sorpresa: Una red social enfocada en la comunidad mexicana. ¡Mantente atento!</p>
-                    <div class="loading-bar">
-                        <div class="loading-progress" style="width: 40%;"></div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h4 style="color: #7877c6;">🌐 Expansión Web3</h4>
-                    <p style="font-size: 14px; margin: 8px 0;">Profundizando en tecnologías Web3 y desarrollo de aplicaciones descentralizadas.</p>
-                    <div class="loading-bar">
-                        <div class="loading-progress" style="width: 20%;"></div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h4 style="color: #7877c6;">🤖 Investigación IA</h4>
-                    <p style="font-size: 14px; margin: 8px 0;">Explorando nuevas aplicaciones de inteligencia artificial en proyectos personales.</p>
-                    <div class="loading-bar">
-                        <div class="loading-progress" style="width: 15%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Terminal -->
-        <div class="window" id="terminal-window" style="width: 700px; height: 500px; top: 100px; left: 400px;">
-            <div class="window-header">
-                <span class="window-title">💻 Terminal - bash</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('terminal-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('terminal-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('terminal-window')"></div>
-                </div>
-            </div>
-            <div class="window-content" style="padding: 0;">
-                <div class="terminal" id="terminal">
-                    <div class="terminal-line">DiegoOS Portfolio Terminal v1.0</div>
-                    <div class="terminal-line">Escribe 'help' para ver comandos disponibles</div>
-                    <div class="terminal-line"></div>
-                    <div class="terminal-line">
-                        <span class="prompt">[diego@portfolio ~]$ </span>
-                        <input type="text" class="terminal-input" id="terminal-input" placeholder="Escribe un comando...">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Chat IA -->
-        <div class="window" id="chat-window" style="width: 450px; height: 500px; top: 120px; left: 500px;">
-            <div class="window-header">
-                <span class="window-title">🤖 Asistente IA - support.ai</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('chat-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('chat-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('chat-window')"></div>
-                </div>
-            </div>
-            <div class="window-content" style="padding: 0;">
-                <div class="chat-container">
-                    <div class="chat-messages" id="chat-messages">
-                        <div class="message bot-message">
-                            ¡Hola! Soy el asistente IA del portafolio. ¿En qué puedo ayudarte hoy? Puedo responder sobre proyectos, tecnologías o servicios.
-                        </div>
-                    </div>
-                    <div class="chat-input-container">
-                        <input type="text" class="chat-input" id="chat-input" placeholder="Escribe tu pregunta...">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Testimonios -->
-        <div class="window" id="testimonials-window" style="width: 600px; height: 550px; top: 100px; left: 250px;">
-            <div class="window-header">
-                <span class="window-title">⭐ Testimonios - reviews.json</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('testimonials-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('testimonials-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('testimonials-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h2 style="color: #7877c6; margin-bottom: 10px;">💬 Lo que dicen mis clientes</h2>
-                    <p style="color: #ff77c6;">Testimonios reales de proyectos completados</p>
-                </div>
-                
-                <div style="display: grid; gap: 20px;">
-                    <div class="project-card" style="background: rgba(120, 119, 198, 0.15);">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7877c6, #ff77c6); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">💪</div>
-                            <div>
-                                <h4 style="color: #7877c6; margin: 0;">Alejandra</h4>
-                                <p style="color: #ff77c6; margin: 0; font-size: 14px;">Entrenadora Personal</p>
-                            </div>
-                        </div>
-                        <p style="font-style: italic; margin-bottom: 10px;">"Diego creó mi página web profesional de entrenamiento personalizado. El diseño es moderno y funcional, exactamente lo que necesitaba para mostrar mis servicios. ¡Muy recomendado!"</p>
-                        <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    
-                    <div class="project-card" style="background: rgba(255, 119, 198, 0.15);">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ff77c6, #7877c6); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">🏋️</div>
-                            <div>
-                                <h4 style="color: #ff77c6; margin: 0;">Luis Macías</h4>
-                                <p style="color: #7877c6; margin: 0; font-size: 14px;">Entrenador SmartFit</p>
-                            </div>
-                        </div>
-                        <p style="font-style: italic; margin-bottom: 10px;">"Excelente trabajo en mi portafolio profesional. Diego entendió perfectamente lo que necesitaba para destacar como entrenador. La página es responsive y se ve increíble en todos los dispositivos."</p>
-                        <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    
-                    <div class="project-card" style="background: rgba(120, 119, 198, 0.15);">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7877c6, #00ff00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">🎨</div>
-                            <div>
-                                <h4 style="color: #7877c6; margin: 0;">Demian Tenorio</h4>
-                                <p style="color: #00ff00; margin: 0; font-size: 14px;">Artista Visual</p>
-                            </div>
-                        </div>
-                        <p style="font-style: italic; margin-bottom: 10px;">"Mi portafolio artístico quedó espectacular. Diego supo capturar mi estilo y crear una experiencia visual única. La navegación es intuitiva y el diseño refleja perfectamente mi trabajo."</p>
-                        <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    
-                    <div class="project-card" style="background: rgba(255, 119, 198, 0.15);">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ff77c6, #ffbd2e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px;">☕</div>
-                            <div>
-                                <h4 style="color: #ff77c6; margin: 0;">Lilian Martínez</h4>
-                                <p style="color: #ffbd2e; margin: 0; font-size: 14px;">Propietaria Cafetería Torogoz</p>
-                            </div>
-                        </div>
-                        <p style="font-style: italic; margin-bottom: 10px;">"La página de mi cafetería superó todas mis expectativas. Diego creó un sitio que refleja la calidez de nuestro lugar y ha ayudado a atraer más clientes. ¡Profesional y creativo!"</p>
-                        <div style="color: #ffbd2e;">⭐⭐⭐⭐⭐</div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(120, 119, 198, 0.1); padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center;">
-                    <h4 style="color: #ff77c6; margin-bottom: 10px;">🚀 ¿Quieres ser el próximo testimonio?</h4>
-                    <p style="font-size: 14px;">¡Contáctame para crear tu proyecto y unirte a estos clientes satisfechos!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana CV -->
-        <div class="window" id="cv-window" style="width: 700px; height: 600px; top: 80px; left: 200px;">
-            <div class="window-header">
-                <span class="window-title">📄 Mi CV - curriculum.pdf</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('cv-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('cv-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('cv-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <div style="text-align: center; margin-bottom: 20px;">
-                    <h2 style="color: #7877c6; margin-bottom: 10px;">📄 Curriculum Vitae</h2>
-                    <p style="color: #ff77c6;">Diego Mancera - Desarrollador Full Stack</p>
-                    <div style="margin: 15px 0;">
-                        <button onclick="window.open('https://drive.google.com/file/d/1cjBbOg0yjTtfRVD_0PPl_J7fD1leQ-W9/view?usp=sharing', '_blank')" class="contact-btn" style="margin-right: 10px;">
-                            📖 Ver PDF Completo
-                        </button>
-                        <button onclick="window.open('https://drive.google.com/uc?export=download&id=1cjBbOg0yjTtfRVD_0PPl_J7fD1leQ-W9', '_blank')" class="contact-btn">
-                            💾 Descargar PDF
-                        </button>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(120, 119, 198, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #7877c6; margin-bottom: 15px;">👤 Información Personal</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 14px;">
-                        <div><strong>Nombre:</strong> Diego Mancera</div>
-                        <div><strong>Edad:</strong> 19 años</div>
-                        <div><strong>Email:</strong> diegomancera.dev@gmail.com</div>
-                        <div><strong>Teléfono:</strong> 5645049448</div>
-                        <div><strong>Ubicación:</strong> León, Guanajuato, México</div>
-                        <div><strong>GitHub:</strong> CryptoCapi</div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255, 119, 198, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #ff77c6; margin-bottom: 15px;">🎓 Educación</h3>
-                    <div style="font-size: 14px;">
-                        <div style="margin-bottom: 10px;">
-                            <strong>Ingeniería en Sistemas Computacionales</strong><br>
-                            Universidad Tecnológica de León (En curso)<br>
-                            <em>2023 - Presente</em>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(120, 119, 198, 0.1); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #7877c6; margin-bottom: 15px;">💼 Experiencia</h3>
-                    <div style="font-size: 14px;">
-                        <div style="margin-bottom: 15px;">
-                            <strong>Desarrollador Web Freelance</strong><br>
-                            <em>2023 - Presente</em><br>
-                            • Desarrollo de páginas web para pequeños negocios<br>
-                            • Creación de portafolios profesionales<br>
-                            • Mantenimiento y optimización de sitios web
-                        </div>
-                        <div>
-                            <strong>Técnico en Mantenimiento de Hardware</strong><br>
-                            <em>2022 - 2023</em><br>
-                            • Mantenimiento preventivo y correctivo de equipos<br>
-                            • Diagnóstico y reparación de componentes<br>
-                            • Soporte técnico a usuarios
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255, 119, 198, 0.1); padding: 20px; border-radius: 8px;">
-                    <h3 style="color: #ff77c6; margin-bottom: 15px;">🏆 Certificaciones</h3>
-                    <div style="font-size: 14px;">
-                        <div style="margin-bottom: 8px;">• <strong>Java Programming</strong> - Metaphorce (2023)</div>
-                        <div>• <strong>Mantenimiento Preventivo y Correctivo de PC</strong> - CECATI (2022)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventana Contacto -->
-        <div class="window" id="contact-window" style="width: 500px; height: 450px; top: 120px; left: 300px;">
-            <div class="window-header">
-                <span class="window-title">📞 Contacto - contact.info</span>
-                <div class="window-controls">
-                    <div class="control-btn minimize" onclick="minimizeWindow('contact-window')"></div>
-                    <div class="control-btn maximize" onclick="maximizeWindow('contact-window')"></div>
-                    <div class="control-btn close" onclick="closeWindow('contact-window')"></div>
-                </div>
-            </div>
-            <div class="window-content">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h2 style="color: #7877c6; margin-bottom: 10px;">¡Conectemos! 🚀</h2>
-                    <p style="color: #ff77c6;">¿Tienes un proyecto en mente? ¡Hablemos!</p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">Email</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-family: 'JetBrains Mono', monospace;">diegomancera.dev@gmail.com</p>
-                    <button onclick="window.open('mailto:diegomancera.dev@gmail.com')" class="contact-btn">Enviar Email</button>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">💬</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">WhatsApp</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-family: 'JetBrains Mono', monospace;">5645049448</p>
-                    <button onclick="window.open('https://wa.me/525645049448', '_blank')" class="contact-btn">Enviar Mensaje</button>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">🐙</div>
-                    <h4 style="color: #7877c6; margin-bottom: 8px;">GitHub</h4>
-                    <p style="color: #e6e6e6; margin-bottom: 15px; font-family: 'JetBrains Mono', monospace;">CryptoCapi</p>
-                    <button onclick="window.open('https://github.com/diegodevxd', '_blank')" class="contact-btn">Ver Perfil</button>
-                </div>
-                
-                <div style="text-align: center; margin-top: 20px;">
-                    <button onclick="window.open('https://drive.google.com/file/d/1cjBbOg0yjTtfRVD_0PPl_J7fD1leQ-W9/view?usp=sharing', '_blank')" style="background: linear-gradient(135deg, #7877c6, #ff77c6); border: none; padding: 12px 24px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
-                        📄 Descargar CV Completo
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Barra de tareas -->
-    <div class="taskbar">
-        <div style="width: 30px; height: 30px; margin-right: 20px; cursor: pointer; transition: transform 0.3s ease; display: flex; align-items: center; justify-content: center;" onclick="toggleStartMenu()">
-            <img src="https://incubaweb.com/wp-content/uploads/2015/07/archlinux_linux_distribution.png" alt="Arch Linux" style="width: 30px; height: 30px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='🏠'; this.parentElement.style.background='linear-gradient(135deg, #7877c6, #ff77c6)'; this.parentElement.style.borderRadius='50%';">
-        </div>
-        
-        <div class="taskbar-apps" id="taskbar-apps">
-            <!-- Las aplicaciones abiertas aparecerán aquí dinámicamente -->
-        </div>
-        
-        <div class="system-info">
-            <span id="current-time"></span> | DiegoOS v1.0 | CPU: 45% | RAM: 2.1GB
-        </div>
-    </div>
-
-   <script src="script.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974d53bf14f52c96',t:'MTc1NjE0ODM3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
-
-
