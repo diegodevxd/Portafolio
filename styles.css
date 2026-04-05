@@ -1,12 +1,28 @@
+@font-face {
+    font-family: 'Aeroblade';
+    src: url('fuentes/Aeroblade DEMO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aero';
+    src: url('fuentes/Aero.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg-dark: #050505;
     --neon-cyan: #0ff;
     --neon-magenta: #f0f;
     --neon-yellow: #ff0;
     --text-color: #e0e0e0;
-    --font-heading: 'Orbitron', sans-serif;
-    --font-body: 'Rajdhani', sans-serif;
-    --font-mono: 'Fira Code', monospace;
+    --font-heading: 'Aeroblade', sans-serif;
+    --font-body: 'Aero', sans-serif;
+    --font-mono: 'Aero', monospace;
 }
 
 * {
@@ -408,12 +424,12 @@ body.no-scroll {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 2rem;
+    padding: 80px 2rem 2rem;
     position: relative;
 }
 
